@@ -31,6 +31,7 @@ public class BasicStats {
     NumbersView numbersView = new NumbersView();
     AddNumView addNumView = new AddNumView();
     ResetView resetView = new ResetView();
+    MinMaxView minMaxView = new MinMaxView();  // Added MinMaxView
 
     //Create statsView
     ArrayList<View> statsViews = new ArrayList<View>();
@@ -38,6 +39,7 @@ public class BasicStats {
     statsViews.add(medianView);
     statsViews.add(meanView);
     statsViews.add(modeView);
+    statsViews.add(minMaxView);  // Added MinMaxView
 
     /***** REGISTER MVC BLOCK *****/
 
@@ -199,4 +201,38 @@ public class BasicStats {
         }
         return input;
     }
+
+    /**
+   * Compute the minimum of an array of numbers.
+   */
+  public static double min(double... numbers) {
+    if (numbers.length == 0) {
+      throw new IllegalArgumentException("Input array is empty");
+    }
+
+    double minValue = numbers[0];
+    for (double num : numbers) {
+      if (num < minValue) {
+        minValue = num;
+      }
+    }
+    return minValue;
+  }
+
+  /**
+   * Compute the maximum of an array of numbers.
+   */
+  public static double max(double... numbers) {
+    if (numbers.length == 0) {
+      throw new IllegalArgumentException("Input array is empty");
+    }
+
+    double maxValue = numbers[0];
+    for (double num : numbers) {
+      if (num > maxValue) {
+        maxValue = num;
+      }
+    }
+    return maxValue;
+  }
 }
