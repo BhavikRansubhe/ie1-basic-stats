@@ -205,18 +205,19 @@ public class BasicStats {
     /**
    * Compute the minimum of an array of numbers.
    */
+    //collaborator Stav Kinreich adding a comment here, changing variable name minValue to minimumValue
   public static double min(double... numbers) {
     if (numbers.length == 0) {
       throw new IllegalArgumentException("Input array is empty");
     }
 
-    double minValue = numbers[0];
+    double minimumValue = numbers[0];
     for (double num : numbers) {
-      if (num < minValue) {
-        minValue = num;
+      if (num < minimumValue) {
+        minimumValue = num;
       }
     }
-    return minValue;
+    return minimumValue;
   }
 
   /**
